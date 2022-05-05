@@ -31,4 +31,14 @@ describe('Clicking "Pusha till stacken"', () => {
 		await alert.sendKeys("Bananer");
 		await alert.accept();
 	});
+
+	test('The stack should contain the string äpple at the ending', async () => {
+		let push = await driver.findElement(By.id('push'));
+		await push.click();
+		let alert = await driver.switchTo().alert();
+		await alert.sendKeys("äpple");
+		await alert.accept();
+		let stack = await driver.findElement(By.id('top_of_stack')).getText();
+		expect(stack).toEqual("bananer");
+	});
 });
