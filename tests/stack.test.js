@@ -23,5 +23,5 @@ test('Add two element to the stack and view and remove the first element', () =>
     stack.push(2);
     expect(stack.peek()).toBe(2);
     stack.pop();
-    expect(stack.peek()).toBe(2);
+    expect(stack.peek()).toBe(1);
 });
